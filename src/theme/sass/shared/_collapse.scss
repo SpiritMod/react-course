@@ -1,0 +1,30 @@
+.fade {
+  transition: all 0.35s ease;
+
+  &:not(.show) {
+    opacity: 0;
+  }
+}
+
+.collapse {
+  &:not(.show) {
+    display: none;
+  }
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.collapse-wrapper {
+  &.collapse:not(.show) {
+    display: block!important;
+    min-height: 78px;
+    height: 78px;
+    overflow: hidden;
+  }
+}
+

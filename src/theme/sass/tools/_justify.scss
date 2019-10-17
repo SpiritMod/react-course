@@ -1,0 +1,16 @@
+@mixin justify() {
+  font-size: 0;
+  text-align: justify;
+  text-justify: newspaper;
+  li {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    margin-top: -1px;
+  }
+}

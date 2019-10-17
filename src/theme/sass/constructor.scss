@@ -1,0 +1,47 @@
+// Author: Kharchuk Oleksandr
+// Telegram: @spiritmod
+
+// SETTINGS
+@import 'settings/settings';
+
+// TOOLS
+@import 'tools/media';
+@import 'tools/icomoon';
+@import 'tools/justify';
+@import 'tools/vertical';
+@import 'tools/square';
+@import 'tools/center';
+
+// GENERIC
+@import 'generic/normalize';
+@import 'generic/reset';
+@import 'generic/fonts';
+@import '../fonts/icomoon/style';
+
+// ELEMENTS
+@import 'elements/page';
+//@import 'elements/headings';
+//@import 'elements/links';
+
+// SHARED
+//@import 'shared/modal';
+//@import 'shared/modal-theme';
+
+// SCOPE/THEME
+//@import 'scope/content';
+
+// OBJECTS
+@import 'objects/container';
+@import 'objects/grid';
+
+
+// COMPONENTS
+@import 'components/btn';
+@import 'components/header';
+@import 'components/main';
+@import 'components/footer';
+
+
+// UTILS
+@import 'utilities/underlined';
+@import 'utilities/fade';

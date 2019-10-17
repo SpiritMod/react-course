@@ -1,0 +1,11 @@
+.u-fade {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease .3s;
+  &.is-visible {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+}

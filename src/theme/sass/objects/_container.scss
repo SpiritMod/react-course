@@ -1,0 +1,67 @@
+$width: 1200px;
+$padding: 90px;
+$padding_large: 20px;
+$padding_tablet: 20px;
+$padding_mobile: 10px;
+$max_width: $width;
+
+.o-container {
+  position: relative;
+  display: block;
+  max-width: $max_width;
+  width: 100%;
+  padding-left: $padding;
+  padding-right: $padding;
+  margin-left: auto;
+  margin-right: auto;
+  @include media('screen', '<1561px') {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  &--small {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 1032px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__home {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    @include media('screen', '<1025px', 'portrait') {
+      text-align: center;
+    }
+    @include media('screen', '<768px', 'portrait') {
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+@include media('screen', '<1024px') {
+  .o-container {
+    padding-left: $padding_tablet;
+    padding-right: $padding_tablet;
+    &--small {
+      padding-left: $padding_tablet;
+      padding-right: $padding_tablet;
+    }
+  }
+}
+
+@include media('screen', '<768px') {
+  .o-container {
+    padding-left: $padding_mobile;
+    padding-right: $padding_mobile;
+    &--small {
+      padding-left: $padding_mobile;
+      padding-right: $padding_mobile;
+    }
+  }
+}
+

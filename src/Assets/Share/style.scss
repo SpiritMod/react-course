@@ -1,0 +1,16 @@
+.share {
+  display: flex;
+  align-items: center;
+  color: #b2b2b2;
+  cursor: pointer;
+  transition: all 0.1s ease 0s;
+  &:hover {
+    span {
+      color: #4886ff;
+    }
+  }
+  span {
+    font-size: 18px;
+    margin-right: 4px;
+  }
+}

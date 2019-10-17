@@ -1,0 +1,14 @@
+.u-underlined {
+  display: inline;
+  background-size: 1px 2px;
+  background-repeat: repeat-x;
+  background-position: 0% 95%;
+  &--primary {
+    @extend .u-underlined;
+    background-image: linear-gradient(rgba(#000, 1), rgba(#000, 1));
+  }
+  &--secondary {
+    @extend .u-underlined;
+    background-image: linear-gradient(rgba(#fff, 1), rgba(#fff, 1));
+  }
+}

@@ -1,0 +1,109 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-size: 50px;
+}
+
+h2,
+.h2 {
+  font-size: 32px;
+}
+
+h3,
+.h3 {
+  font-size: 30px;
+}
+
+h4,
+.h4 {
+  font-size: 24px;
+}
+
+h5,
+.h5 {
+  font-size: 20px;
+}
+
+h6,
+.h6 {
+  font-size: 18px;
+}
+
+.title {
+  font-family: $primary_font;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 1;
+  text-align: center;
+  color: #000;
+  @include media('screen', '<1025px') {
+    font-size: 36px;
+  }
+  @include media('screen', '<768px') {
+    font-size: 24px;
+  }
+}
+
+.sub-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+  @include media('screen', '<1025px') {
+    font-size: 16px;
+  }
+  @include media('screen', '<768px') {
+    font-size: 12px;
+  }
+}
+
+@include media('screen', '>1440px') {
+  h1,
+  .h1 {
+    font-size: 60px;
+  }
+  h2,
+  .h2 {
+    font-size: 36px;
+  }
+}
+
+@include media('screen', '<=1200px') {
+  h1,
+  .h1 {
+    font-size: 42px;
+  }
+  h2,
+  .h2 {
+    font-size: 24px;
+  }
+}
+
+@include media('screen', '<=1024px') {
+  h1,
+  .h1 {
+    font-size: 32px;
+  }
+  h2,
+  .h2 {
+    font-size: 22px;
+  }
+}
+
+@include media('screen', '<768px') {
+  h1,
+  .h1 {
+    font-size: 30px;
+  }
+  h2,
+  .h2 {
+    font-size: 20px;
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Home } from './Views/Home';
 
-import './style.scss';
+import './sass/constructor.scss';
 
 const App = () => {
   return (

@@ -1,0 +1,98 @@
+.s-content {
+  width: 100%;
+  color: #e0e0e0;
+  font-family: $primary_font;
+  font-size: 16px;
+  line-height: 1.5;
+  > * {
+    &:last-child {
+      margin-bottom: 0!important;
+    }
+  }
+  h3 {
+    color: #e0e0e0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 15px;
+    padding: 0 0;
+  }
+  h4 {
+    color: #e0e0e0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0 0 15px;
+    padding: 0 0;
+  }
+  p {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0 0 15px;
+  }
+  a {
+    color: #e0e0e0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  strong, b {
+    font-weight: bold;
+  }
+  ul {
+    list-style: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0 0 15px;
+    li {
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      margin-bottom: 15px;
+      &:before {
+        content: '-';
+        margin-right: 4px;
+      }
+    }
+  }
+  ol {
+    list-style: decimal;
+    list-style-position: inside;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0 0 15px;
+    li {
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@include media('screen', '<768px') {
+  .s-content {
+    font-size: 12px;
+    h3 {
+      font-size: 13px;
+      line-height: 1.2;
+    }
+    h4 {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+}

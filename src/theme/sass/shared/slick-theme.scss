@@ -1,0 +1,125 @@
+.slick-arrow {
+  display: inline-block;
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  top: 50%;
+  border-radius: 50%;
+  font-size: 18px;
+  padding: 0 0;
+  color: rgba(#000,0.5);
+  outline: none;
+  border: none;
+  transform: translateY(-50%);
+  transition: all .2s ease;
+  z-index: 3;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba($grey,0);
+  background: #F9ECFF;
+  @include vertical;
+  @include media('screen', '<1025px') {
+    width: 44px;
+    height: 44px;
+    font-size: 14px;
+  }
+  @include media('screen', '<768px') {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+  }
+  &:hover {
+    color: #000;
+  }
+  > span {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    font-size: 18px;
+    color: inherit;
+    @include media('screen', '<1025px') {
+      font-size: 14px;
+    }
+    @include media('screen', '<768px') {
+      font-size: 10px;
+    }
+  }
+  &.slick-disabled {
+    display: block!important;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  &.slick-prev {
+    left: 0;
+    text-indent: -2px;
+    @include media('screen', '<768px') {
+      text-indent: -1px;
+    }
+  }
+  &.slick-next {
+    right: 0;
+    text-indent: 2px;
+    @include media('screen', '<768px') {
+      text-indent: 1px;
+    }
+  }
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -105px!important;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  li {
+    padding: 0 5px;
+    pointer-events: none;
+    &.slick-active {
+      .slick-dot {
+        transform: scale(1.6);
+        background-color: $primary_color;
+        opacity: 1;
+      }
+    }
+  }
+  .slick-dot {
+    display: block;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: rgba(#fff,0.5);
+    transition: all .2s ease;
+    opacity: 1;
+    border: none;
+  }
+}
+
+@include media('screen', '<768px') {
+  .slick-arrow {
+    font-size: 20px;
+    &.slick-prev {
+      left: 16px;
+    }
+    &.slick-next {
+      right: 16px;
+    }
+  }
+
+  .slick-dots {
+    bottom: 16px;
+    button {
+      height: 10px;
+      width: 10px;
+    }
+  }
+}
+
+@include media('screen', '<600px') {
+  .slick-dots {
+    bottom: -100px;
+  }
+}

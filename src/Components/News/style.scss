@@ -1,0 +1,11 @@
+.c-news {
+  h2 {
+    margin-bottom: 20px;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    //align-items: center;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,16 @@
+.c-main {
+  flex: 1 0 auto;
+  position: relative;
+  z-index: 101;
+  padding: 20px 0 40px;
+}
+
+#root, .page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  //@include media('screen', '<768px', 'portrait') {
+  //}
+}
+

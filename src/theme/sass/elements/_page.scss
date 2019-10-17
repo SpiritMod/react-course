@@ -1,0 +1,31 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  min-height: 100%;
+  width: auto;
+  color: #000;
+  font-family: $primary_font;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  direction: ltr;
+  background: #f6f7fb;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  &.no-scroll {
+    position: fixed;
+    width: 100%;
+    overflow-y: hidden;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
