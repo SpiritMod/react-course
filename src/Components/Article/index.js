@@ -22,7 +22,7 @@ export const Article = ({ item }) => {
           </div>
         </div>
         <div className="item-article__content">
-          <div className="item-article__title">{item.title}</div>
+          <a href="#" className="item-article__title">{item.title}</a>
           <div className="item-article__description">{item.description}</div>
         </div>
       </div>

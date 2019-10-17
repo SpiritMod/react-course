@@ -51,9 +51,16 @@
     }
   }
   &__title {
+    display: inline-block;
+    color: #000;
     font-weight: bold;
     font-size: 18px;
+    text-decoration: none;
     margin-bottom: 16px;
+    transition: all 0.1s ease 0s;
+    &:hover {
+      color: #4886ff;
+    }
   }
   &__description {
     font-size: 14px;
