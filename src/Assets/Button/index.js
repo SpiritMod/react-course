@@ -6,7 +6,7 @@ import cx from 'classnames';
 
 export const Button = ( props ) => {
   const {
-    title = 'Click',
+    children = 'Click',
     disabled,
     type
   } = props;
@@ -17,7 +17,7 @@ export const Button = ( props ) => {
   });
 
   return (
-    <button className={customClassNames}>{title}</button>
+    <button className={customClassNames}>{children}</button>
   )
 };
 

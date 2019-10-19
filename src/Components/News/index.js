@@ -2,6 +2,7 @@ import React from 'react';
 import './style.scss';
 import { Article } from "../Article";
 import { Button } from "../../Assets/Button";
+import { List } from "../../Assets/List";
 
 const db = [
   {
@@ -56,8 +57,16 @@ export const News = () => {
       <div className="c-news__list">
         { articles }
       </div>
-      <Button title='Send' disabled type='link' />
-      <Button type='button'/>
+      <ul>
+        <List>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </List>
+      </ul>
+
+      <Button disabled type='link'>Send</Button>
+      <Button type='button'>Text</Button>
     </div>
   )
 };
