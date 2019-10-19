@@ -40,8 +40,8 @@ export const Article = ( props ) => {
       <div className="item-article__footer">
         <Date date={published}/>
         <div className="item-article__footer-group">
-          <CommentsCounter counter={comments}/>
-          <LikesCounter counter={likes}/>
+          <CommentsCounter counts={comments}/>
+          <LikesCounter counts={likes}/>
           <Share />
         </div>
       </div>
