@@ -6,32 +6,42 @@ import { CommentsCounter } from '../../Assets/CommentsCounter';
 import { LikesCounter } from '../../Assets/LikesCounter';
 import { Share } from '../../Assets/Share';
 
-export const Article = ({ item }) => {
+export const Article = ( props ) => {
 
-  const tags = item.tags.map((item, index) => {
-    return <Tag key={index} tag={item}/>
+  const {
+    title,
+    description,
+    published,
+    likes,
+    comments,
+    image,
+    tags
+  } = props;
+
+  const tagsList = tags.map((item, index) => {
+    return <Tag key={ index } source={ item }/>
   });
 
   return (
     <div className="item-article">
       <div className="item-article__top">
         <div className="item-article__header">
-          <img className="item-article__img" src={item.image} alt={item.title}/>
+          <img className="item-article__img" src={image} alt={title}/>
           <div className="tags-list">
-            { tags }
+            { tagsList }
           </div>
         </div>
         <div className="item-article__content">
-          <a href="#" className="item-article__title">{item.title}</a>
-          <div className="item-article__description">{item.description}</div>
+          <a href="#" className="item-article__title">{title}</a>
+          <div className="item-article__description">{description}</div>
         </div>
       </div>
 
       <div className="item-article__footer">
-        <Date date={item.published}/>
+        <Date date={published}/>
         <div className="item-article__footer-group">
-          <CommentsCounter counter={item.comments}/>
-          <LikesCounter counter={item.likes}/>
+          <CommentsCounter counter={comments}/>
+          <LikesCounter counter={likes}/>
           <Share />
         </div>
       </div>
