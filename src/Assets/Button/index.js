@@ -1,17 +1,26 @@
 import React from 'react';
+import { string } from 'prop-types';
 import './style.scss'
 
 import cx from 'classnames';
 
-const isDisabled = () => false;
+export const Button = ( props ) => {
+  const {
+    title = 'Click',
+    disabled,
+    type
+  } = props;
 
-export const Button = () => {
   const customClassNames = cx({
     btn: true,
-    disable: isDisabled()
+    disable: disabled
   });
+
   return (
-    <button className={customClassNames}>btn</button>
+    <button className={customClassNames}>{title}</button>
   )
 };
 
+Button.propTypes = {
+  type: string.isRequired
+};

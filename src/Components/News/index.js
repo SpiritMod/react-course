@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.scss';
 import { Article } from "../Article";
+import { Button } from "../../Assets/Button";
 
 const db = [
   {
@@ -55,6 +56,8 @@ export const News = () => {
       <div className="c-news__list">
         { articles }
       </div>
+      <Button title='Send' disabled type='link' />
+      <Button type='button'/>
     </div>
   )
 };
