@@ -8,9 +8,18 @@ export const LikesCounter = (props) => {
 
   const { counter, increase, decrease } = useCounter(counts);
 
+  const [ likes, setLikes ] = useState(true);
+
+  const changeLikes = () => {
+    setLikes((prevLikes) => {
+      return !prevLikes
+    });
+
+    likes ? increase() : decrease();
+  };
 
   return (
-    <div onClick={increase} className="likes-counter">
+    <div onClick={changeLikes} className={`likes-counter ${!likes ? 'is-active' : ''}`}>
       <span className="icon-heart"></span>
       { counter }
     </div>

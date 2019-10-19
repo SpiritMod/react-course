@@ -5,13 +5,13 @@
   font-size: 14px;
   cursor: pointer;
   transition: all 0.1s ease 0s;
-  &:hover {
-    span {
-      color: #4886ff;
-    }
-  }
   span {
     font-size: 18px;
     margin-right: 4px;
+  }
+  &.is-active {
+    span {
+      color: #4886ff;
+    }
   }
 }

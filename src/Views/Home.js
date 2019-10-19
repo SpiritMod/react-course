@@ -9,7 +9,7 @@ const db = [
     title: 'The standard Lorem Ipsum passage, used since the 1500s',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     published: '15.07.2017',
-    likes: 315,
+    likes: 100,
     comments: 10,
     image: 'https://source.unsplash.com/random/480x400/?literature,books',
     tags: [
@@ -35,7 +35,7 @@ const db = [
     title: 'Title 3',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     published: '15.07.2017',
-    likes: 315,
+    likes: 221,
     comments: 10,
     image: 'https://source.unsplash.com/random/480x400/?books',
     tags: [
