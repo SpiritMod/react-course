@@ -1,0 +1,38 @@
+.accordion-item {
+  $self: &;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  &__title {
+    cursor: pointer;
+    background: #f1f4fb;
+    border-radius: 5px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease 0s;
+    &:hover {
+      box-shadow: 0 4px 6px #eeeff3;
+    }
+  }
+  &__content {
+    height: 0;
+    opacity: 0;
+    padding: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease 0s;
+  }
+
+  &.isOpened {
+    #{$self}__title {
+      box-shadow: 0 4px 6px #eeeff3;
+    }
+    #{$self}__content {
+      height: 100%;
+      visibility: visible;
+      opacity: 1;
+      padding: 16px 20px 10px;
+    }
+  }
+}

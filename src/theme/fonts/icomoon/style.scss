@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?j5kzre');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?j5kzre#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff2?j5kzre') format('woff2'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?j5kzre') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?j5kzre') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?j5kzre##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?tgznvv');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?tgznvv#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff2?tgznvv') format('woff2'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?tgznvv') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?tgznvv') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?tgznvv##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -28,6 +28,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-remove {
+  &:before {
+    content: $icon-remove; 
+  }
+}
+.icon-add {
+  &:before {
+    content: $icon-add; 
+  }
+}
 .icon-keyboard_arrow_up {
   &:before {
     content: $icon-keyboard_arrow_up; 

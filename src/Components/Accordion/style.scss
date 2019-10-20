@@ -1,0 +1,12 @@
+.accordion {
+  &__header {
+    margin-bottom: 40px;
+  }
+  &__title {
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+}

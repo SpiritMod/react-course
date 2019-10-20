@@ -15,4 +15,6 @@
 <glyph unicode="&#xe905;" glyph-name="keyboard_arrow_right" d="M366 252l196 196-196 196 60 60 256-256-256-256z" />
 <glyph unicode="&#xe906;" glyph-name="keyboard_arrow_left" d="M658 252l-60-60-256 256 256 256 60-60-196-196z" />
 <glyph unicode="&#xe907;" glyph-name="keyboard_arrow_down" d="M316 594l196-196 196 196 60-60-256-256-256 256z" />
+<glyph unicode="&#xe908;" glyph-name="add" d="M810 406h-256v-256h-84v256h-256v84h256v256h84v-256h256v-84z" />
+<glyph unicode="&#xe909;" glyph-name="remove" d="M810 406h-596v84h596v-84z" />
 </font></defs></svg>
