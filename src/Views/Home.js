@@ -3,6 +3,7 @@ import { Header } from '../Components/Header';
 import { Footer } from '../Components/Footer';
 import { News } from '../Components/News';
 import { Profile } from '../Components/Profile';
+import { ExampleUseReducer } from '../Components/ExampleUseReducer';
 
 export const Home = () => {
   return (
@@ -10,9 +11,10 @@ export const Home = () => {
       <Header/>
       <main className="c-main" role="main">
         <div className="o-container">
-          <News/>
+          <ExampleUseReducer/>
+          {/*<News/>
 
-          <Profile/>
+          <Profile/>*/}
         </div>
       </main>
       <Footer/>
