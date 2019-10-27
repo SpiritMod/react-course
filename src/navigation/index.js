@@ -22,26 +22,11 @@ export const Routes = () => (
         path={ book.root }
         exact
       />
-
-      <Route
-        component={ News }
-        path={ book.newsItem }
-        exact
-      />
       <Route
         component={ News }
         path={ book.news }
         exact
       />
-
-      <Route
-        exact
-        component = { Unknown }
-        path = { book.unknown }
-      />
-
-      <Redirect to = { book.unknown } />
-
     </Switch>
 
   </>

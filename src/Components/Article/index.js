@@ -15,8 +15,7 @@ export const Article = ( props ) => {
     likes,
     comments,
     poster,
-    tags,
-    objectId
+    tags
   } = props;
 
   const tagsList = tags.split(', ').map((item, index) => {
@@ -27,12 +26,10 @@ export const Article = ( props ) => {
     <div className="item-article">
       <div className="item-article__top">
         <div className="item-article__header">
-          <a href={`/news/${objectId}`}>
-            <img className="item-article__img" src={poster} alt={title}/>
-            <div className="tags-list">
-              { tagsList }
-            </div>
-          </a>
+          <img className="item-article__img" src={poster} alt={title}/>
+          <div className="tags-list">
+            { tagsList }
+          </div>
         </div>
         <div className="item-article__content">
           <a href="#" className="item-article__title">{title}</a>
