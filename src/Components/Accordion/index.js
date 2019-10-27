@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AccordionItem } from './AccordionItem';
+import { AccordionItem } from '../AccordionItem';
 import './style.scss';
 
 export const Accordion = (props) => {

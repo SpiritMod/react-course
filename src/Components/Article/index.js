@@ -3,7 +3,7 @@ import './style.scss';
 import { Tag } from '../../Assets/Tag';
 import { Date } from '../../Assets/Date';
 import { CommentsCounter } from '../../Assets/CommentsCounter';
-import { LikesCounter } from '../../Assets/LikesCounter';
+import { LikeCounter } from '../../Assets/LikeCounter';
 import { Share } from '../../Assets/Share';
 
 export const Article = ( props ) => {
@@ -11,14 +11,14 @@ export const Article = ( props ) => {
   const {
     title,
     description,
-    published,
+    created,
     likes,
     comments,
-    image,
+    poster,
     tags
   } = props;
 
-  const tagsList = tags.map((item, index) => {
+  const tagsList = tags.split(', ').map((item, index) => {
     return <Tag key={ index } source={ item }/>
   });
 
@@ -26,7 +26,7 @@ export const Article = ( props ) => {
     <div className="item-article">
       <div className="item-article__top">
         <div className="item-article__header">
-          <img className="item-article__img" src={image} alt={title}/>
+          <img className="item-article__img" src={poster} alt={title}/>
           <div className="tags-list">
             { tagsList }
           </div>
@@ -38,10 +38,10 @@ export const Article = ( props ) => {
       </div>
 
       <div className="item-article__footer">
-        <Date date={published}/>
+        <Date date={created}/>
         <div className="item-article__footer-group">
           <CommentsCounter counts={comments}/>
-          <LikesCounter counts={likes}/>
+          <LikeCounter counts={likes}/>
           <Share />
         </div>
       </div>

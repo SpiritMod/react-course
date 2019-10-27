@@ -3,7 +3,7 @@ import './style.scss';
 
 import { useCounter } from "./useCounter";
 
-export const LikesCounter = (props) => {
+export const LikeCounter = (props) => {
   const { counts } = props;
 
   const { counter, increase, decrease } = useCounter(counts);
