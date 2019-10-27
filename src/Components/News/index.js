@@ -28,8 +28,7 @@ export const News = () => {
 
     (source.length > 0) ? setLoading(false) : setLoading(true);
 
-  }, [source]);
-
+  }, [source, id]);
 
 
   const articles = data.map((item) => {
@@ -37,7 +36,6 @@ export const News = () => {
   });
 
   if ((data.length === 0) && (loading === false)) {
-    console.log(Boolean(id));
     history.push(book.unknown);
   }
 
