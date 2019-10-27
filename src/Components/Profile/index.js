@@ -23,13 +23,15 @@ export const Profile = () => {
 
   return (
     <>
-      <h1>Profile</h1>
-      <button onClick={ increase }>Increase value</button>
-      <p>Counter: { counter }</p>
-      <button onClick={ decrease }>Decrease value</button>
-      <button onClick={ changeAge }>Change Age</button>
-      <p>{ profile.age }</p>
-      <p>{ profile.type }</p>
+      <div className="o-container">
+        <h1>Profile</h1>
+        <button onClick={ increase }>Increase value</button>
+        <p>Counter: { counter }</p>
+        <button onClick={ decrease }>Decrease value</button>
+        <button onClick={ changeAge }>Change Age</button>
+        <p>{ profile.age }</p>
+        <p>{ profile.type }</p>
+      </div>
     </>
   )
 };

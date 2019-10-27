@@ -10,24 +10,13 @@ import { ExUseMemo } from '../Components/ExUseMemo';
 import { ExLocalStore } from '../Components/ExLocalStore';
 import { SmartNews } from '../Components/SmartNews';
 
-export const Home = () => {
+export const Unknown = () => {
   return (
     <>
-      {/*<Header/>*/}
       <main className="c-main" role="main">
         <div className="o-container">
-          {/*<ExampleUseReducer/>
-          <ExSetTimeout/>*/}
-          {/*<ExSetInterval/>*/}
-          {/*<ExUseMemo/>*/}
-
-          {/*<ExLocalStore/>*/}
-
-          {/*<News/>
-
-          <Profile/>*/}
-
-          <SmartNews />
+          <h1>404</h1>
+          <p>Ups:)</p>
         </div>
       </main>
       <Footer/>
