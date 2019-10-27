@@ -8,6 +8,8 @@ import { Home } from '../Views/Home';
 import { Unknown } from '../Components/Unknown';
 
 import { News } from "../Components/News";
+import { PrivateRoute } from "./PrivateRoute";
+import {Login} from "../Views/Login";
 
 export const Routes = () => (
   <>
@@ -23,11 +25,17 @@ export const Routes = () => (
         exact
       />
 
-      <Route
+      {/*<Route
         component={ News }
         path={ book.newsItem }
         exact
-      />
+      />*/}
+
+      <PrivateRoute path={book.newsItem}>
+        <News />
+      </PrivateRoute>
+
+
       <Route
         component={ News }
         path={ book.news }
@@ -38,6 +46,12 @@ export const Routes = () => (
         exact
         component = { Unknown }
         path = { book.unknown }
+      />
+
+      <Route
+        component={ Login }
+        path={ book.login }
+        exact
       />
 
       <Redirect to = { book.unknown } />

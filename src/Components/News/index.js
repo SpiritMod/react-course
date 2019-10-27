@@ -6,6 +6,7 @@ import './style.scss';
 import { book } from "../../navigation/book";
 import { useNews } from './useNews';
 import { Article } from '../Article';
+import { Logout } from '../Logout';
 
 
 export const News = () => {
@@ -16,12 +17,10 @@ export const News = () => {
   const history = useHistory();
   const source = useNews();
 
-  const localStorageKey = 'localStoragePosts';
+  const authenticated = !(localStorage.getItem("authenticated") === null) ? JSON.parse(localStorage.getItem('authenticated')) : false;
 
 
   useEffect(() => {
-
-    const timerId = setInterval(updateNewsStorage, 5000);
 
     if (id) {
       setData(source.filter(item => {
@@ -34,11 +33,10 @@ export const News = () => {
     (source.length > 0) ? setLoading(false) : setLoading(true);
 
     return () => {
-      clearInterval(timerId);
+
     }
 
   }, [source, id]);
-
 
   const articles = data.map((item) => {
     return <Article key={item.objectId} {...item}/>
@@ -50,46 +48,13 @@ export const News = () => {
 
   const loader = <p>Загрузка....</p>;
 
-  const updateNewsStorage = () => {
-
-    const checkStorage = JSON.parse(localStorage.getItem(localStorageKey));
-
-    const newsStorage = {
-      date: new Date(),
-      source: source
-    };
-
-
-    if (checkStorage) {
-
-      const storageDate = new Date(checkStorage.date).getTime() + (30 * 1000);
-      const currentDate = new Date().getTime();
-
-      if (storageDate < currentDate) {
-        console.log('storageDate < currentDate');
-        localStorage.removeItem(localStorageKey);
-
-        localStorage.setItem(localStorageKey, JSON.stringify({
-          date: new Date(),
-          source: source
-        }));
-
-      } else {
-        console.log('storageDate > currentDate');
-
-      }
-
-    } else {
-      localStorage.setItem(localStorageKey, JSON.stringify(newsStorage));
-    }
-
-    console.log(JSON.parse(localStorage.getItem(localStorageKey)));
-  };
+  const logout = (authenticated && id) ? <Logout /> : '';
 
   return (
     <div className="o-container">
       <div className="c-news">
         <h2>News</h2>
+        { logout }
         <div className="c-news__list">
           {
             loading ? loader : articles
