@@ -21,12 +21,14 @@ export const News = () => {
   const loader = <p>Загрузка....</p>;
 
   return (
-    <div className="c-news">
-      <h2>News</h2>
-      <div className="c-news__list">
-        {
-          loading ? loader : articles
-        }
+    <div className="o-container">
+      <div className="c-news">
+        <h2>News</h2>
+        <div className="c-news__list">
+          {
+            loading ? loader : articles
+          }
+        </div>
       </div>
     </div>
   )
