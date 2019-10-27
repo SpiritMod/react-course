@@ -4,8 +4,8 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { book } from "./book";
 
 import { Header} from "../Components/Header";
-import { Footer } from '../Components/Footer';
 import { Home } from '../Views/Home';
+import { Unknown } from '../Components/Unknown';
 
 import { News } from "../Components/News";
 
@@ -25,8 +25,22 @@ export const Routes = () => (
 
       <Route
         component={ News }
-        path={ book.news }
+        path={ book.newsItem }
+        exact
       />
+      <Route
+        component={ News }
+        path={ book.news }
+        exact
+      />
+
+      <Route
+        exact
+        component = { Unknown }
+        path = { book.unknown }
+      />
+
+      <Redirect to = { book.unknown } />
 
     </Switch>
 
