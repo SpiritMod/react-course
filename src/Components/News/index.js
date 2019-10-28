@@ -11,17 +11,12 @@ import { Article } from '../Article';
 export const News = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const source = useNews();
 
   const { id } = useParams();
   const history = useHistory();
-  const source = useNews();
-
-  const localStorageKey = 'localStoragePosts';
-
 
   useEffect(() => {
-
-    const timerId = setInterval(updateNewsStorage, 5000);
 
     if (id) {
       setData(source.filter(item => {
@@ -31,11 +26,7 @@ export const News = () => {
       setData(source);
     }
 
-    (source.length > 0) ? setLoading(false) : setLoading(true);
-
-    return () => {
-      clearInterval(timerId);
-    }
+    (source.length > 0 ) ? setLoading(false) : setLoading(true);
 
   }, [source, id]);
 
@@ -49,42 +40,6 @@ export const News = () => {
   }
 
   const loader = <p>Загрузка....</p>;
-
-  const updateNewsStorage = () => {
-
-    const checkStorage = JSON.parse(localStorage.getItem(localStorageKey));
-
-    const newsStorage = {
-      date: new Date(),
-      source: source
-    };
-
-
-    if (checkStorage) {
-
-      const storageDate = new Date(checkStorage.date).getTime() + (30 * 1000);
-      const currentDate = new Date().getTime();
-
-      if (storageDate < currentDate) {
-        console.log('storageDate < currentDate');
-        localStorage.removeItem(localStorageKey);
-
-        localStorage.setItem(localStorageKey, JSON.stringify({
-          date: new Date(),
-          source: source
-        }));
-
-      } else {
-        console.log('storageDate > currentDate');
-
-      }
-
-    } else {
-      localStorage.setItem(localStorageKey, JSON.stringify(newsStorage));
-    }
-
-    console.log(JSON.parse(localStorage.getItem(localStorageKey)));
-  };
 
   return (
     <div className="o-container">
