@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.scss';
+import { Link } from "react-router-dom";
 import { Tag } from '../../Assets/Tag';
 import { Date } from '../../Assets/Date';
 import { CommentsCounter } from '../../Assets/CommentsCounter';
@@ -27,12 +28,12 @@ export const Article = ( props ) => {
     <div className="item-article">
       <div className="item-article__top">
         <div className="item-article__header">
-          <a href={`/news/${objectId}`}>
+          <Link to={`/news/${objectId}`}>
             <img className="item-article__img" src={poster} alt={title}/>
             <div className="tags-list">
               { tagsList }
             </div>
-          </a>
+          </Link>
         </div>
         <div className="item-article__content">
           <a href="#" className="item-article__title">{title}</a>
