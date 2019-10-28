@@ -30,7 +30,7 @@ export const useNews = () => {
     const storageDate = new Date(storageData.date).getTime() + lifeTimeData;
     const currentDate = new Date().getTime();
 
-    if (storageDate <= currentDate) {
+    if (storageDate < currentDate) {
       getPosts();
     } else {
       setPosts(storageData.source);
