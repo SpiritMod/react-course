@@ -9,6 +9,7 @@ import { ExSetInterval } from '../Components/ExSetInterval';
 import { ExUseMemo } from '../Components/ExUseMemo';
 import { ExLocalStore } from '../Components/ExLocalStore';
 import { SmartNews } from '../Components/SmartNews';
+import { Customer } from '../Components/Customer';
 
 export const Home = () => {
   return (
@@ -16,6 +17,7 @@ export const Home = () => {
       {/*<Header/>*/}
       <main className="c-main" role="main">
         <div className="o-container">
+          <Customer />
           {/*<ExampleUseReducer/>
           <ExSetTimeout/>*/}
           {/*<ExSetInterval/>*/}
@@ -27,7 +29,7 @@ export const Home = () => {
 
           <Profile/>*/}
 
-          <SmartNews />
+          {/*<SmartNews />*/}
         </div>
       </main>
       <Footer/>
