@@ -2,6 +2,9 @@ import React from "react";
 import { Formik } from "formik";
 
 import "./style.scss";
+
+import { useLocalStorage } from "../../Hooks/useLocalStorage";
+
 import { Button } from "../../Assets/Button";
 import { InputField } from "../../Assets/InputField";
 import { SelectField } from "../../Assets/SelectField";
@@ -10,6 +13,8 @@ import { FieldRadioGroup } from "../../Assets/FieldRadioGroup";
 
 
 export const StudentRegistration = () => {
+  const { getLocalStorage, saveLocalStorage } = useLocalStorage('student');
+
   const initialValues = {
     firstName: "",
     surname: "",
@@ -21,6 +26,7 @@ export const StudentRegistration = () => {
 
   const submitForm = (values) => {
     console.log(values);
+    saveLocalStorage(values);
   };
 
   return (
@@ -29,7 +35,7 @@ export const StudentRegistration = () => {
         <h2>Registration</h2>
 
         <Formik
-          initialValues={ initialValues }
+          initialValues={ getLocalStorage() || initialValues }
           onSubmit={ submitForm }
         >
 
@@ -79,11 +85,13 @@ export const StudentRegistration = () => {
                       name="sex"
                       id="male"
                       value="male"
+                      checked={props.values.sex === 'male' && 'checked'}
                     >Male</FieldRadioButton>
                     <FieldRadioButton
                       name="sex"
                       id="female"
                       value="female"
+                      checked={props.values.sex === 'female' && 'checked'}
                     >Female</FieldRadioButton>
                   </FieldRadioGroup>
                 </div>
@@ -97,7 +105,7 @@ export const StudentRegistration = () => {
 
               </div>
               <div className="form__footer">
-                <Button type="submit">Submit</Button>
+                <Button type="submit">{ getLocalStorage() ? 'Обновить данные' : 'Сохранить данные'}</Button>
                 { (props.submitCount > 0) && <h4 className="form__message">Форма заполнена</h4>}
               </div>
             </form>
