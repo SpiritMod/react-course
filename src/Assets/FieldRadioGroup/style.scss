@@ -1,0 +1,14 @@
+.field-radio-group {
+  &__title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    > div {
+      margin-right: 20px;
+    }
+  }
+}
