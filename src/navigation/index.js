@@ -49,12 +49,6 @@ export const Routes = () => (
       />
 
       <Route
-        component={ Student }
-        path={ book.student }
-        exact
-      />
-
-      <Route
         component={ StudentRegistration }
         path={ book.studentRegistration }
         exact
