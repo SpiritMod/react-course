@@ -1,11 +1,21 @@
 import React from 'react';
-import { Home } from './Views/Home';
+import { Provider } from 'react-redux';
+
 
 import './theme/sass/constructor.scss';
+import {history} from "./navigation/history";
+import { Router } from 'react-router-dom';
+import { Routes } from "./navigation";
+
+import { store } from "./init/store";
 
 const App = () => {
   return (
-    <Home/>
+    <Provider store={ store }>
+      <Router history={history}>
+        <Routes />
+      </Router>
+    </Provider>
   )
 };
 

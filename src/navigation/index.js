@@ -6,6 +6,7 @@ import { News } from "../Components/News";
 import { Header} from "../Components/Header";
 import { book } from "./book";
 import { Unknown } from "../Views/Unknown";
+import { User } from "../Components/User";
 import {Home} from "../Views/Home";
 
 export const Routes = () => (
@@ -31,6 +32,11 @@ export const Routes = () => (
       <Route
         component={ Profile }
         path={ book.profile }
+        exact
+      />
+      <Route
+        component={ User }
+        path={ book.user }
         exact
       />
       <Route

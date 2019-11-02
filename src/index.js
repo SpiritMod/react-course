@@ -8,9 +8,7 @@ import { Router } from 'react-router-dom';
 import { Routes } from "./navigation";
 
 ReactDOM.render(
-  <Router history={history}>
-    <Routes />
-  </Router>
+  <App />
   , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
