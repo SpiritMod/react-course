@@ -19,7 +19,7 @@ export const validationForm = Yup.object().shape({
       'designer',
       'developer',
       'manager'
-    ], 'Invalid Job')
+    ], 'Invalid Speciality')
     .required('Required')
 });
 
