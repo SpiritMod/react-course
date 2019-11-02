@@ -1,4 +1,5 @@
 .field-radio-group {
+  $self: &;
   &__title {
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -9,6 +10,17 @@
     justify-content: flex-start;
     > div {
       margin-right: 20px;
+    }
+  }
+  .field-error {
+    color: red;
+    font-size: 13px;
+    padding: 0 0 0 0;
+  }
+
+  &.error {
+    #{$self}__title {
+      color: red;
     }
   }
 }

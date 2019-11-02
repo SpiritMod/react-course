@@ -11,7 +11,9 @@ import { InputField } from "../../Assets/InputField";
 import { SelectField } from "../../Assets/SelectField";
 import { FieldRadioButton } from "../../Assets/FieldRadioButton";
 import { FieldRadioGroup } from "../../Assets/FieldRadioGroup";
-import {book} from "../../navigation/book";
+import { book } from "../../navigation/book";
+
+import { validationForm } from "./validationForm";
 
 
 export const StudentRegistration = () => {
@@ -27,45 +29,11 @@ export const StudentRegistration = () => {
     speciality: ""
   };
 
-  const validateFieldFirstName = (values) => {
-    let errors = {};
-
-    if(!values.firstName) {
-      errors.firstName = 'Required';
-    }
-
-    return errors;
-  };
-
-  /*const validateFields = (values) => {
-    const errors = {};
-    if (!values.firstName) {
-      errors.firstName = 'Required';
-    } else if (values.firstName.length > 15) {
-      errors.firstName = 'Must be 15 characters or less';
-    }
-
-    if (!values.lastName) {
-      errors.lastName = 'Required';
-    } else if (values.lastName.length > 20) {
-      errors.lastName = 'Must be 20 characters or less';
-    }
-
-    if (!values.email) {
-      errors.email = 'Required';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-      errors.email = 'Invalid email address';
-    }
-
-    return errors;
-  };*/
-
   const submitForm = (values) => {
     console.log(values);
     saveLocalStorage(values);
     history.push(book.student);
   };
-
 
   return (
     <>
@@ -75,14 +43,15 @@ export const StudentRegistration = () => {
         <Formik
           initialValues={ getLocalStorage() || initialValues }
           onSubmit={ submitForm }
-          validateOnBlur={false}
-
+          validate={ validationForm }
         >
           {(props) => {
-            const { errors, touched, isValidating, resetForm, submitForm } = props;
+            const { errors, handleSubmit } = props;
+            //console.log(props);
+            //errors, touched, isValidating, resetForm, submitForm,
 
             return (
-              <form className="form__registration" onSubmit={props.handleSubmit}>
+              <form className="form__registration" onSubmit={handleSubmit}>
                 <div className="form__group">
                   <div className="form__field">
                     <InputField
@@ -92,7 +61,6 @@ export const StudentRegistration = () => {
                       type="text"
                       placeholder="First Name"
                       value={ props.values.firstName }
-                      error={ props.errors.firstName }
                     />
                   </div>
                   <div className="form__field">
@@ -127,7 +95,7 @@ export const StudentRegistration = () => {
                   </div>
 
                   <div className="form__field">
-                    <FieldRadioGroup title="Sex">
+                    <FieldRadioGroup title="Sex" name="sex" id="sex" value={props.values.sex} error={errors.sex}>
                       <FieldRadioButton
                         name="sex"
                         id="male"
@@ -148,6 +116,7 @@ export const StudentRegistration = () => {
                     <option value="designer">Designer</option>
                     <option value="developer">Developer</option>
                     <option value="manager">Manager</option>
+                    <option value="11">11</option>
                   </SelectField>
 
                 </div>
