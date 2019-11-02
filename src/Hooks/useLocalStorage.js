@@ -1,7 +1,7 @@
 export const useLocalStorage = (key) => {
 
   const getLocalStorage = () => {
-    return JSON.parse(localStorage.getItem(key));
+    return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : '';
   };
 
   const saveLocalStorage = (data) => {

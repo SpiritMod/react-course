@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Formik } from "formik";
 
 import "./style.scss";
@@ -10,10 +11,12 @@ import { InputField } from "../../Assets/InputField";
 import { SelectField } from "../../Assets/SelectField";
 import { FieldRadioButton } from "../../Assets/FieldRadioButton";
 import { FieldRadioGroup } from "../../Assets/FieldRadioGroup";
+import {book} from "../../navigation/book";
 
 
 export const StudentRegistration = () => {
   const { getLocalStorage, saveLocalStorage } = useLocalStorage('student');
+  const history = useHistory();
 
   const initialValues = {
     firstName: "",
@@ -27,6 +30,7 @@ export const StudentRegistration = () => {
   const submitForm = (values) => {
     console.log(values);
     saveLocalStorage(values);
+    history.push(book.student);
   };
 
   return (
