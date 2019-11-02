@@ -43,12 +43,10 @@ export const StudentRegistration = () => {
         <Formik
           initialValues={ getLocalStorage() || initialValues }
           onSubmit={ submitForm }
-          validate={ validationForm }
+          validationSchema={ validationForm }
         >
           {(props) => {
             const { errors, handleSubmit } = props;
-            //console.log(props);
-            //errors, touched, isValidating, resetForm, submitForm,
 
             return (
               <form className="form__registration" onSubmit={handleSubmit}>
@@ -95,7 +93,7 @@ export const StudentRegistration = () => {
                   </div>
 
                   <div className="form__field">
-                    <FieldRadioGroup title="Sex" name="sex" id="sex" value={props.values.sex} error={errors.sex}>
+                    <FieldRadioGroup title="Sex" name="sex" error={errors.sex}>
                       <FieldRadioButton
                         name="sex"
                         id="male"
@@ -116,7 +114,6 @@ export const StudentRegistration = () => {
                     <option value="designer">Designer</option>
                     <option value="developer">Developer</option>
                     <option value="manager">Manager</option>
-                    <option value="11">11</option>
                   </SelectField>
 
                 </div>
