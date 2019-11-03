@@ -6,6 +6,7 @@ export const validationForm = Yup.object().shape({
   surname: Yup.string()
     .required('Required'),
   age: Yup.number()
+    .integer()
     .min(6, 'Too Short!')
     .max(60, 'Too Long!')
     .required('Required'),
