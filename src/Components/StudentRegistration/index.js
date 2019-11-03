@@ -22,8 +22,6 @@ export const StudentRegistration = () => {
   const student = useSelector((state) => state.student);
   const hasStudent = Object.keys(student).length === 0 && student.constructor === Object;
 
-  console.log(hasStudent);
-
   const history = useHistory();
 
   const initialValues = {
