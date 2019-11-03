@@ -24,10 +24,10 @@ export const validationForm = Yup.object().shape({
   password: Yup.string()
     .min(10, 'Password is too short!')
     .matches(
-      /^(?=.*\d.*\d.*\d)(?=.*[^A-Za-z]).{10,}/,
-      'Password must be at least 3 digit characters long')
+      /^(?=.*\d.*\d.*\d)(?=.*[^A-Za-z])/,
+      'Password must be at least 3 digit characters long and contain Latin letters')
     .required('Password is required'),
-  passwordConfirm: Yup.string()
+  confirmpassword: Yup.string()
     .oneOf([Yup.ref('password')], 'Passwords do not match')
     .required('Confirm password required'),
 });

@@ -28,7 +28,7 @@ export const StudentRegistration = () => {
     sex: "",
     speciality: "",
     password: "",
-    passwordConfirm: ""
+    confirmpassword: ""
   };
 
   const submitForm = (values) => {
@@ -131,12 +131,12 @@ export const StudentRegistration = () => {
                   </div>
                   <div className="form__field">
                     <InputField
-                      id="passwordConfirm"
+                      id="confirmpassword"
                       label="Confirm password"
-                      name="passwordConfirm"
+                      name="confirmpassword"
                       type="password"
                       placeholder="Confirm password"
-                      value={ values.passwordConfirm }
+                      value={ values.confirmpassword }
                     />
                   </div>
 
