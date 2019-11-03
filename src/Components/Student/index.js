@@ -47,6 +47,3 @@ export const Student = () => {
     </div>
   )
 };
-
-/*
-{"firstName":"Name","surname":"Surname","age":30,"email":"sashko.harchuk@gmail.com","sex":"male","speciality":"developer"}*/
