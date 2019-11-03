@@ -32,7 +32,6 @@ export const StudentRegistration = () => {
   };
 
   const submitForm = (values) => {
-    console.log(values);
     saveLocalStorage(values);
     history.push(book.student);
   };
