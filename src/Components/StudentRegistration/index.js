@@ -4,7 +4,8 @@ import { Formik } from "formik";
 
 import "./style.scss";
 
-import { useLocalStorage } from "../../Hooks/useLocalStorage";
+import { useSelector, useDispatch } from "react-redux";
+import { studentActions } from "../../bus/student/actions";
 
 import { Button } from "../../Assets/Button";
 import { InputField } from "../../Assets/InputField";
@@ -17,7 +18,12 @@ import { validationForm } from "./validationForm";
 
 
 export const StudentRegistration = () => {
-  const { getLocalStorage, saveLocalStorage } = useLocalStorage('student');
+  const dispatch = useDispatch();
+  const student = useSelector((state) => state.student);
+  const hasStudent = Object.keys(student).length === 0 && student.constructor === Object;
+
+  console.log(hasStudent);
+
   const history = useHistory();
 
   const initialValues = {
@@ -32,9 +38,12 @@ export const StudentRegistration = () => {
   };
 
   const submitForm = (values) => {
-    console.log(values);
-    saveLocalStorage(values);
+    setDataStudent(values);
     history.push(book.student);
+  };
+
+  const setDataStudent = (data) => {
+    dispatch(studentActions.setDataStudent(data));
   };
 
   return (
@@ -43,7 +52,7 @@ export const StudentRegistration = () => {
         <h2>Registration</h2>
 
         <Formik
-          initialValues={ getLocalStorage() || initialValues }
+          initialValues={ !hasStudent ? student : initialValues }
           onSubmit={ submitForm }
           validationSchema={ validationForm }
         >
@@ -127,6 +136,7 @@ export const StudentRegistration = () => {
                       name="password"
                       type="password"
                       placeholder="Password"
+                      autoComplete="autocomplete"
                       value={ values.password }
                     />
                   </div>
@@ -136,6 +146,7 @@ export const StudentRegistration = () => {
                       label="Confirm password"
                       name="passwordConfirm"
                       type="password"
+                      autoComplete="autocomplete"
                       placeholder="Confirm password"
                       value={ values.passwordConfirm }
                     />
@@ -143,8 +154,7 @@ export const StudentRegistration = () => {
 
                 </div>
                 <div className="form__footer">
-                  <Button type="submit">{ getLocalStorage() ? 'Обновить данные' : 'Сохранить данные'}</Button>
-                  { (props.submitCount > 0) && <h4 className="form__message">Форма заполнена</h4>}
+                  <Button type="submit">{ !hasStudent ? 'Обновить данные' : 'Сохранить данные'}</Button>
                 </div>
               </form>
             )

@@ -1,13 +1,16 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./style.scss";
 
-import { useLocalStorage } from "../../Hooks/useLocalStorage";
+import { useSelector } from "react-redux";
+
+
 import {book} from "../../navigation/book";
 
 
 export const Student = () => {
-  const { getLocalStorage } = useLocalStorage('student');
+  const student = useSelector((state) => state.student);
+
   const {
     firstName,
     surname,
@@ -17,7 +20,7 @@ export const Student = () => {
     speciality,
     password,
     passwordConfirm
-  } = getLocalStorage();
+  } = student;
 
   const studentInfo =
       <>
@@ -41,12 +44,10 @@ export const Student = () => {
       <div className="o-container">
         <h2>Student</h2>
         <div className="c-student__content">
-          { getLocalStorage() ? studentInfo : studentNotFound }
+          { student ? studentInfo : studentNotFound }
         </div>
       </div>
     </div>
   )
 };
 
-/*
-{"firstName":"Name","surname":"Surname","age":30,"email":"sashko.harchuk@gmail.com","sex":"male","speciality":"developer"}*/

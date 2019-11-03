@@ -9,10 +9,8 @@ export const FieldRadioGroup = ({ children, ...props }) => {
 
   const { title } = props;
 
-  console.log(meta);
-
   return (
-    <div className={ `field-radio-group ${ meta.error && meta.touched && "error" }` } >
+    <div className={ `field-radio-group ${ meta.error && meta.touched && "error" }` } {...field}>
       <div className="field-radio-group__title">{title}</div>
       <div className="field-radio-group__content">
         {children}
