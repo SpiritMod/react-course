@@ -14,7 +14,9 @@ export const Student = () => {
     age,
     email,
     sex,
-    speciality
+    speciality,
+    password,
+    passwordConfirm
   } = getLocalStorage();
 
   const studentInfo =
@@ -25,6 +27,8 @@ export const Student = () => {
         <div className="c-student__field"><strong>Email:</strong>{email}</div>
         <div className="c-student__field"><strong>Sex:</strong>{sex}</div>
         <div className="c-student__field"><strong>Speciality:</strong>{speciality}</div>
+        <div className="c-student__field"><strong>Password:</strong>{password}</div>
+        <div className="c-student__field"><strong>Confirm password:</strong>{passwordConfirm}</div>
       </>;
 
   const studentNotFound = <h4>

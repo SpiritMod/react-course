@@ -26,7 +26,9 @@ export const StudentRegistration = () => {
     age: 0,
     email: "",
     sex: "",
-    speciality: ""
+    speciality: "",
+    password: "",
+    passwordConfirm: ""
   };
 
   const submitForm = (values) => {
@@ -36,7 +38,7 @@ export const StudentRegistration = () => {
   };
 
   return (
-    <>
+    <div className="c-student-form">
       <div className="o-container">
         <h2>Registration</h2>
 
@@ -46,7 +48,7 @@ export const StudentRegistration = () => {
           validationSchema={ validationForm }
         >
           {(props) => {
-            const { errors, handleSubmit } = props;
+            const { values, errors, handleSubmit } = props;
 
             return (
               <form className="form__registration" onSubmit={handleSubmit}>
@@ -58,7 +60,7 @@ export const StudentRegistration = () => {
                       name="firstName"
                       type="text"
                       placeholder="First Name"
-                      value={ props.values.firstName }
+                      value={ values.firstName }
                     />
                   </div>
                   <div className="form__field">
@@ -68,7 +70,7 @@ export const StudentRegistration = () => {
                       name="surname"
                       type="text"
                       placeholder="Surname"
-                      value={props.values.surname}
+                      value={ values.surname }
                     />
                   </div>
                   <div className="form__field">
@@ -78,7 +80,7 @@ export const StudentRegistration = () => {
                       name="age"
                       type="number"
                       placeholder="Age"
-                      value={props.values.age}
+                      value={ values.age }
                     />
                   </div>
                   <div className="form__field">
@@ -88,33 +90,56 @@ export const StudentRegistration = () => {
                       name="email"
                       type="email"
                       placeholder="Email"
-                      value={props.values.email}
+                      value={ values.email }
                     />
                   </div>
 
                   <div className="form__field">
-                    <FieldRadioGroup title="Sex" name="sex" error={errors.sex}>
+                    <FieldRadioGroup title="Sex" name="sex" error={ errors.sex }>
                       <FieldRadioButton
                         name="sex"
                         id="male"
                         value="male"
-                        checked={props.values.sex === 'male' && 'checked'}
+                        checked={ values.sex === 'male' && 'checked' }
                       >Male</FieldRadioButton>
                       <FieldRadioButton
                         name="sex"
                         id="female"
                         value="female"
-                        checked={props.values.sex === 'female' && 'checked'}
+                        checked={ values.sex === 'female' && 'checked' }
                       >Female</FieldRadioButton>
                     </FieldRadioGroup>
                   </div>
 
-                  <SelectField label="Speciality" name="speciality" id="speciality">
-                    <option value="" disabled>Select a speciality</option>
-                    <option value="designer">Designer</option>
-                    <option value="developer">Developer</option>
-                    <option value="manager">Manager</option>
-                  </SelectField>
+                  <div className="form__field">
+                    <SelectField label="Speciality" name="speciality" id="speciality">
+                      <option value="" disabled>Select a speciality</option>
+                      <option value="designer">Designer</option>
+                      <option value="developer">Developer</option>
+                      <option value="manager">Manager</option>
+                    </SelectField>
+                  </div>
+
+                  <div className="form__field">
+                    <InputField
+                      id="password"
+                      label="Password"
+                      name="password"
+                      type="password"
+                      placeholder="Password"
+                      value={ values.password }
+                    />
+                  </div>
+                  <div className="form__field">
+                    <InputField
+                      id="passwordConfirm"
+                      label="Confirm password"
+                      name="passwordConfirm"
+                      type="password"
+                      placeholder="Confirm password"
+                      value={ values.passwordConfirm }
+                    />
+                  </div>
 
                 </div>
                 <div className="form__footer">
@@ -127,7 +152,7 @@ export const StudentRegistration = () => {
         </Formik>
 
       </div>
-    </>
+    </div>
   )
 };
 
