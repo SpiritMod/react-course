@@ -16,9 +16,6 @@ export const Header = () => {
             <li>
               <NavLink to={book.news}>News</NavLink>
             </li>
-            <li>
-              <NavLink to={book.studentRegistration}>Registration</NavLink>
-            </li>
           </ul>
         </nav>
       </div>

@@ -5,13 +5,13 @@ import cx from 'classnames';
 
 const isDisabled = () => false;
 
-export const Button = ({ children, ...props }) => {
+export const Button = () => {
   const customClassNames = cx({
-    btn: '',
+    btn: true,
     disable: isDisabled()
   });
   return (
-    <button className={`c-btn + ${customClassNames}`} {...props}><span className="c-btn__text">{ children }</span></button>
+    <button className={customClassNames}>btn</button>
   )
 };
 

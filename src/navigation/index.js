@@ -1,15 +1,15 @@
-import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import { book } from "./book";
 
 import { Header} from "../Components/Header";
 import { Home } from '../Views/Home';
 import { Unknown } from '../Components/Unknown';
+
 import { News } from "../Components/News";
 import { PrivateRoute } from "./PrivateRoute";
-import { Login } from "../Views/Login";
-import { StudentRegistration } from "../Components/StudentRegistration";
+import {Login} from "../Views/Login";
 
 export const Routes = () => (
   <>
@@ -25,9 +25,16 @@ export const Routes = () => (
         exact
       />
 
+      {/*<Route
+        component={ News }
+        path={ book.newsItem }
+        exact
+      />*/}
+
       <PrivateRoute path={book.newsItem}>
         <News />
       </PrivateRoute>
+
 
       <Route
         component={ News }
@@ -44,12 +51,6 @@ export const Routes = () => (
       <Route
         component={ Login }
         path={ book.login }
-        exact
-      />
-
-      <Route
-        component={ StudentRegistration }
-        path={ book.studentRegistration }
         exact
       />
 
