@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import { Formik } from "formik";
 
 import "./style.scss";
@@ -26,7 +25,6 @@ export const StudentRegistration = () => {
   };
 
   const submitForm = (values) => {
-    console.log(values);
     saveLocalStorage(values);
   };
 

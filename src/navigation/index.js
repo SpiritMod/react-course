@@ -10,7 +10,6 @@ import { News } from "../Components/News";
 import { PrivateRoute } from "./PrivateRoute";
 import { Login } from "../Views/Login";
 import { StudentRegistration } from "../Components/StudentRegistration";
-import { Student } from "../Components/Student";
 
 export const Routes = () => (
   <>
