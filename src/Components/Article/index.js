@@ -36,7 +36,7 @@ export const Article = ( props ) => {
           </Link>
         </div>
         <div className="item-article__content">
-          <a href="#" className="item-article__title">{title}</a>
+          <div className="item-article__title">{title}</div>
           <div className="item-article__description">{description}</div>
         </div>
       </div>
