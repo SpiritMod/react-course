@@ -15,14 +15,15 @@ import { FieldRadioGroup } from "../../Assets/FieldRadioGroup";
 import { book } from "../../navigation/book";
 
 import { validationForm } from "./validationForm";
+import { isObjectEmpty } from "../../helpers/isObjectEmpty";
 
 
 export const StudentRegistration = () => {
   const dispatch = useDispatch();
   const student = useSelector((state) => state.student);
-  const hasStudent = Object.keys(student).length === 0 && student.constructor === Object;
-
   const history = useHistory();
+
+  const studentIsEmpty = isObjectEmpty(student);
 
   const initialValues = {
     firstName: "",
@@ -50,7 +51,7 @@ export const StudentRegistration = () => {
         <h2>Registration</h2>
 
         <Formik
-          initialValues={ !hasStudent ? student : initialValues }
+          initialValues={ studentIsEmpty ? initialValues : student }
           onSubmit={ submitForm }
           validationSchema={ validationForm }
         >
@@ -152,7 +153,7 @@ export const StudentRegistration = () => {
 
                 </div>
                 <div className="form__footer">
-                  <Button type="submit">{ !hasStudent ? 'Обновить данные' : 'Сохранить данные'}</Button>
+                  <Button type="submit">{ studentIsEmpty ? 'Сохранить данные' : 'Обновить данные'}</Button>
                 </div>
               </form>
             )
