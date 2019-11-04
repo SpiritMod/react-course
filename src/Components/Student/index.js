@@ -4,12 +4,14 @@ import "./style.scss";
 
 import { useSelector } from "react-redux";
 
-
-import {book} from "../../navigation/book";
+import { isObjectEmpty } from "../../helpers/isObjectEmpty";
+import { book } from "../../navigation/book";
 
 
 export const Student = () => {
   const student = useSelector((state) => state.student);
+
+  const studentIsEmpty = isObjectEmpty(student);
 
   const {
     firstName,
@@ -44,7 +46,7 @@ export const Student = () => {
       <div className="o-container">
         <h2>Student</h2>
         <div className="c-student__content">
-          { student ? studentInfo : studentNotFound }
+          { studentIsEmpty ? studentNotFound : studentInfo }
         </div>
       </div>
     </div>
