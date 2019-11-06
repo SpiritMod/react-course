@@ -1,51 +1,38 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import { Profile } from "../Components/Profile";
-import { News } from "../Components/News";
-import { Header} from "../Components/Header";
-import { book } from "./book";
-import { Unknown } from "../Views/Unknown";
-import { User } from "../Components/User";
-import {Home} from "../Views/Home";
+import {book} from "./book";
+
+import { Views } from "../views";
+import { Starships } from "../bus/starships/index";
+import {Planets} from "../bus/planets/index";
+import {Swapi} from "../bus/swapi";
+
 
 export const Routes = () => (
 
   <>
-    <Route
-      component={ Header }
-      path={ book.root }
-    />
 
     <Switch>
 
-      <Route
-        component={ Home }
-        path={ book.root }
-        exact
-      />
-      <Route
-        component={ News }
-        path={ book.news }
-        exact
-      />
-      <Route
-        component={ Profile }
-        path={ book.profile }
-        exact
-      />
-      <Route
-        component={ User }
-        path={ book.user }
-        exact
-      />
-      <Route
-        component={ Unknown }
-        path={ book.unknown }
-        exact
-      />
+      <Route exact path={ book.starships } >
+        <Views.Facade>
+          <Starships/>
+        </Views.Facade>
+      </Route>
 
-      <Redirect to={book.unknown} />
+      <Route exact path={ book.planets } >
+        <Views.Facade>
+          <Planets/>
+        </Views.Facade>
+      </Route>
+
+      <Route exact path={ book.swapi } >
+        <Views.Facade>
+          <Swapi/>
+        </Views.Facade>
+      </Route>
+
 
     </Switch>
 

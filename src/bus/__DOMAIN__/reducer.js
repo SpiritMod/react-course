@@ -5,7 +5,7 @@ const initialState = {
   property: ''
 };
 
-export const domainRedicer = ( state = initialState, {type} ) => {
+export const domainReducer = ( state = initialState, {type} ) => {
   switch (type) {
     case types.DOMAIN_ACTION:
       return {

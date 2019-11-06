@@ -1,7 +1,6 @@
 export const book = Object.freeze({
-  root: '/',
-  news: '/news/:id',
-  profile: '/profile',
-  unknown: '/404',
-  user: '/user'
+  user: '/user',
+  starships: '/starships',
+  planets: '/planets',
+  swapi: '/swapi',
 });
