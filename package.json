@@ -39,6 +39,11 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/react-hooks": "^3.2.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "jest": "^24.9.0",
     "redux-logger": "^3.0.6"
   }
 }
