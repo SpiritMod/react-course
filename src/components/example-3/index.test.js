@@ -43,27 +43,17 @@ describe('Counter component', () => {
   test('Increase fn should increase value by 1', () => {
     const source = 0;
     const { container, increment } = init(source);
-    const counter = container.find('p');
-    const prevValue = Number(counter.text());
-    const incrementedValue = prevValue + 1;
     increment.props().onClick();
-    const updatedCounter = container.find('p');
-    const receivedValue = Number(updatedCounter.text());
-
-    expect(receivedValue).toBe(incrementedValue);
+    const counter = container.find('p');
+    const receivedValue = Number(counter.text());
+    expect(receivedValue).toBe(1);
   });
   test('Decrease fn should decrease value by 1', () => {
     const source = 0;
     const { container, decrement } = init(source);
-    const counter = container.find('p');
-    const prevCounter = Number(counter.text());
-    const decrementedValue = prevCounter - 1;
-
     decrement.props().onClick();
-
-    const updatedCounter = container.find('p');
-    const receivedValue = Number(updatedCounter.text());
-
-    expect(receivedValue).toBe(decrementedValue);
+    const counter = container.find('p');
+    const receivedValue = Number(counter.text());
+    expect(receivedValue).toBe(-1);
   });
 });
