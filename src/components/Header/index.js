@@ -13,6 +13,9 @@ export const Header = () => {
             <li>
               <NavLink to={book.people}>People</NavLink>
             </li>
+            <li>
+              <NavLink to={book.films}>Films</NavLink>
+            </li>
           </ul>
         </nav>
       </div>

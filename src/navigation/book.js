@@ -6,4 +6,6 @@ export const book = Object.freeze({
   swapi: '/swapi',
   people: '/people',
   person: '/people/:id',
+  films: '/films',
+  film: '/films/:id',
 });

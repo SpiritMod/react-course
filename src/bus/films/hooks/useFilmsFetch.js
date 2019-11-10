@@ -1,16 +1,16 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { peopleActions } from "../actions";
+import { filmsActions } from "../actions";
 
-export const usePeopleFetch = () => {
-  const { data, isFetching, error } = useSelector((state) => state.people);
+export const useFilmsFetch = () => {
+  const { data, isFetching, error } = useSelector((state) => state.films);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (data.length) {
-      dispatch(peopleActions.fill(data));
+      dispatch(filmsActions.fill(data));
     } else {
-      dispatch(peopleActions.fetchAsync());
+      dispatch(filmsActions.fetchAsync());
     }
   }, [dispatch, data]);
 

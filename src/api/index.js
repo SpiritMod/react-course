@@ -14,6 +14,20 @@ export const api = Object.freeze({
         method: 'GET'
       })
     }
-  }
+  },
+  films: {
+    fetch: () => {
+      return fetch(`${root}/films`, {
+        method: 'GET'
+      })
+    }
+  },
+  film: {
+    fetch: (id) => {
+      return fetch(`${root}/films/${id}`, {
+        method: 'GET'
+      })
+    }
+  },
 
 });
