@@ -1,6 +1,5 @@
 import { compose } from 'redux';
 import { createLogger } from 'redux-logger';
-import thunk from "redux-thunk";
 import { customThunk } from "./customThunk";
 
 export const logger = createLogger({

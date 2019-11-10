@@ -1,38 +1,34 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import {book} from "./book";
 
 import { Views } from "../views";
-import { Starships } from "../bus/starships/index";
-import {Planets} from "../bus/planets/index";
-import {Swapi} from "../bus/swapi";
+import { Header } from "../components/Header";
+import { People } from "../bus/people/index";
+import { Person } from "../bus/people/person";
 
 
 export const Routes = () => (
 
   <>
+    <Route
+      component={ Header }
+      path={ book.root }
+    />
 
     <Switch>
 
-      <Route exact path={ book.starships } >
+      <Route exact path={ book.people } >
         <Views.Facade>
-          <Starships/>
+          <People/>
         </Views.Facade>
       </Route>
-
-      <Route exact path={ book.planets } >
+      <Route exact path={ book.person } >
         <Views.Facade>
-          <Planets/>
+          <Person/>
         </Views.Facade>
       </Route>
-
-      <Route exact path={ book.swapi } >
-        <Views.Facade>
-          <Swapi/>
-        </Views.Facade>
-      </Route>
-
 
     </Switch>
 

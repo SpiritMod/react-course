@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom';
 import App from '../src/App';
 import * as serviceWorker from './serviceWorker';
 
-import { history } from "./navigation/history";
-import { Router } from 'react-router-dom';
-import { Routes } from "./navigation";
-
 ReactDOM.render(
   <App />
   , document.getElementById('root'));

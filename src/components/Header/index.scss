@@ -1,0 +1,17 @@
+.c-header {
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    li {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+    a {
+      font-size: 16px;
+      text-transform: uppercase;
+      color: #3b5998;
+    }
+  }
+}
