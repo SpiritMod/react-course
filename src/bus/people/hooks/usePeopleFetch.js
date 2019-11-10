@@ -12,7 +12,7 @@ export const usePeopleFetch = () => {
     } else {
       dispatch(peopleActions.fetchAsync());
     }
-  }, [dispatch]);
+  }, [dispatch, data]);
 
   return {
     data,

@@ -14,7 +14,7 @@ export const usePersonFetch = (id) => {
     } else {
       dispatch(peopleActions.fetchAsyncPerson(id));
     }
-  }, [dispatch, id]);
+  }, [dispatch, currentPerson, id]);
 
   return {
     person,
