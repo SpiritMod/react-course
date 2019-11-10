@@ -29,7 +29,7 @@ export const People = () => {
       <Title>People</Title>
       {loader}
       {errorMessage}
-      { !hasError ? list : ''}
+      {!hasError && list}
     </div>
   )
 };

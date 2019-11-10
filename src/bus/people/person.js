@@ -46,7 +46,7 @@ export const Person = () => {
       <Title>Person</Title>
       {loader}
       {errorMessage}
-      { !hasError ? personFields : ''}
+      {!hasError && personFields}
     </div>
   )
 };
