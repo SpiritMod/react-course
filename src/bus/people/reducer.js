@@ -5,7 +5,7 @@ const initialState = {
   data: [],
   isFetching: false,
   error: false,
-  person: {},
+  person: false,
 };
 
 export const peopleReducer = ( state = initialState, { type, payload } ) => {
