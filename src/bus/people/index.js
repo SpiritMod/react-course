@@ -8,8 +8,9 @@ import { Loader } from "../../components/Loader";
 export const People = () => {
 
   const { data, isFetching, error } = usePeopleFetch();
+  const hasError = error.status === 404;
 
-  const errorMessage = error.status === 404 && (
+  const errorMessage = hasError && (
     <p>Upsss... 404</p>
   );
 
@@ -28,7 +29,7 @@ export const People = () => {
       <Title>People</Title>
       {loader}
       {errorMessage}
-      {list}
+      { !hasError ? list : ''}
     </div>
   )
 };

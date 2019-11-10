@@ -9,6 +9,7 @@ export const Film = () => {
   const { id } = useParams();
 
   const { film, isFetching, error } = useFilmFetch(id);
+  const hasError = error.status === 404;
   const {
     title,
     director,
@@ -16,7 +17,7 @@ export const Film = () => {
     opening_crawl,
   } = film;
 
-  const errorMessage = error.status === 404 && (
+  const errorMessage = hasError && (
     <p>Upsss... 404</p>
   );
 
@@ -36,7 +37,7 @@ export const Film = () => {
       <Title>Film</Title>
       {loader}
       {errorMessage}
-      {personFields}
+      { !hasError ? personFields : ''}
     </div>
   )
 };

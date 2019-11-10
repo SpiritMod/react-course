@@ -14,7 +14,7 @@ export const filmsReducer = ( state = initialState, { type, payload } ) => {
       return { ...state, data: payload };
 
     case types.FILMS_START_FETCHING:
-      return { ...state, isFetching: true };
+      return { ...state, error: false, isFetching: true };
 
     case types.FILMS_SET_FETCHING_ERROR:
       return { ...state, error: payload };
