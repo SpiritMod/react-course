@@ -9,6 +9,7 @@ export const Person = () => {
   const { id } = useParams();
 
   const { person, isFetching, error } = usePersonFetch(id);
+  const hasError = error.status === 404;
   const {
     name,
     height,
@@ -21,7 +22,7 @@ export const Person = () => {
   } = person;
 
 
-  const errorMessage = error.status === 404 && (
+  const errorMessage = hasError && (
     <p>Upsss... 404</p>
   );
 
@@ -45,7 +46,7 @@ export const Person = () => {
       <Title>Person</Title>
       {loader}
       {errorMessage}
-      {personFields}
+      {!hasError && personFields}
     </div>
   )
 };
